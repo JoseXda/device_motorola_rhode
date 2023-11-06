@@ -12,10 +12,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/motorola/rhode/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_rhode
+PRODUCT_NAME := bootleg_rhode
 PRODUCT_DEVICE := rhode
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := moto g52
@@ -27,3 +27,19 @@ BUILD_FINGERPRINT := "motorola/rhode_g/rhode:12/S1SRS32.38-132-14/c4430-03865f:u
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=rhode_g \
     PRIVATE_BUILD_DESC="rhode_g-user 12 S1SRS32.38-132-14 c4430-03865f release-keys"
+
+# Flags
+TARGET_BOOTLEG_ARCH := arm64
+WITH_GAPPS := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_USES_BLUR := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
+
+# Maintainer
+DEVICE_MAINTAINERS := "josexda"
+BOOTLEGGERS_BUILD_TYPE := Shishufied
